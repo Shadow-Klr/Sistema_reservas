@@ -1,21 +1,13 @@
-export default function Home() {
+export default function RegistroPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-4">Bienvenido al Sistema de Reservas</h1>
-      <p className="mb-8 text-lg">Gestiona tus citas de forma rápida y sencilla.</p>
-
-      <div className="flex gap-4">
-        <button className="px-6 py-2 bg-blue-600 text-white rounded">Login</button>
-        <button className="px-6 py-2 bg-green-600 text-white rounded">Registro</button>
-      </div>
-
-      <section className="mt-12 p-6 border rounded-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4">Solicitar Cita</h2>
-        {/* Aquí integraremos el calendario más adelante */}
-        <div className="h-32 bg-gray-100 flex items-center justify-center border-dashed border-2">
-          [ Calendario - Placeholder ]
-        </div>
-      </section>
-    </main>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-3xl font-bold mb-6">Crear Cuenta</h1>
+      <form className="flex flex-col gap-4 w-80">
+        <input type="text" placeholder="Nombre completo" className="p-2 border rounded" />
+        <input type="email" placeholder="Email" className="p-2 border rounded" />
+        <input type="password" placeholder="Contraseña" className="p-2 border rounded" />
+        <button className="bg-green-600 text-white p-2 rounded">Registrarse</button>
+      </form>
+    </div>
   );
 }

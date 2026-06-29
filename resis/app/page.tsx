@@ -1,21 +1,16 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-4">Bienvenido al Sistema de Reservas</h1>
-      <p className="mb-8 text-lg">Gestiona tus citas de forma rápida y sencilla.</p>
-
+    <main className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+      <h1 className="text-5xl font-bold mb-6">Bienvenido a mi Sistema</h1>
+      <p className="text-xl mb-10">Gestiona tus citas de forma profesional.</p>
+      
       <div className="flex gap-4">
-        <button className="px-6 py-2 bg-blue-600 text-white rounded">Login</button>
-        <button className="px-6 py-2 bg-green-600 text-white rounded">Registro</button>
+        <Link href="/login" className="bg-blue-600 text-white px-6 py-3 rounded-lg">Login</Link>
+        <Link href="/registro" className="bg-green-600 text-white px-6 py-3 rounded-lg">Registro</Link>
+        <Link href="/citas" className="bg-purple-600 text-white px-6 py-3 rounded-lg">Ver Calendario</Link>
       </div>
-
-      <section className="mt-12 p-6 border rounded-lg w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4">Solicitar Cita</h2>
-        {/* Aquí integraremos el calendario más adelante */}
-        <div className="h-32 bg-gray-100 flex items-center justify-center border-dashed border-2">
-          [ Calendario - Placeholder ]
-        </div>
-      </section>
     </main>
   );
 }
