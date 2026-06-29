@@ -8,8 +8,8 @@ export default function Home() {
       
       <div className="flex gap-4">
         <Link href="/login" className="bg-blue-600 text-white px-6 py-3 rounded-lg">Login</Link>
-        <Link href="/registro" className="bg-green-600 text-white px-6 py-3 rounded-lg">Registro</Link>
-        <Link href="/citas" className="bg-purple-600 text-white px-6 py-3 rounded-lg">Ver Calendario</Link>
+        <Link href="/register" className="bg-green-600 text-white px-6 py-3 rounded-lg">Registro</Link>
+        <Link href="/cites" className="bg-purple-600 text-white px-6 py-3 rounded-lg">Ver Calendario</Link>
       </div>
     </main>
   );
