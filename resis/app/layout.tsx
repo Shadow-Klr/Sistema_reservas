@@ -1,8 +1,14 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
+<<<<<<< HEAD
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./components/theme-provider";
+=======
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { ThemeProvider } from "../components/theme-provider";
+>>>>>>> 5640071f68dd67b92992cccc5dc6cb8f43dbb56e
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
