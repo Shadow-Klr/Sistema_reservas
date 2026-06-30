@@ -1,13 +1,66 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import Link from "next/link";
+import styles from "./login.module.css";
 
 export default function LoginPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] px-6">
-      <div className="w-full max-w-sm space-y-6">
-        <h1 className="text-3xl font-bold text-center">Acceso</h1>
-        <input type="email" placeholder="Email" className="w-full bg-zinc-900 p-3 border border-zinc-700" />
-        <input type="password" placeholder="Contraseña" className="w-full bg-zinc-900 p-3 border border-zinc-700" />
-        <Button className="w-full bg-amber-700 hover:bg-amber-800 rounded-none">Entrar</Button>
+    <div className={styles.screenWrapper}>
+      
+      {/* Tarjeta del Formulario (Modelo 2) */}
+      <div className={styles.cardContainer}>
+        
+        {/* Encabezado con la Marca */}
+        <div style={{ textAlign: "center" }}>
+          <h1 className={styles.titleLogo}>
+            Sync<span>Space</span>
+          </h1>
+          <h2 className={styles.subtitle}>
+            Iniciar Sesión
+          </h2>
+        </div>
+
+        {/* Estructura del Formulario */}
+        <form className={styles.formStructure} onSubmit={(e) => e.preventDefault()}>
+          
+          {/* Input: Correo Electrónico / Usuario */}
+          <div className={styles.inputGroup}>
+            <label className={styles.fieldLabel}>
+              Correo Electrónico o Usuario
+            </label>
+            <input 
+              type="email" 
+              placeholder="correo@empresa.com" 
+              className={styles.textInput}
+              required
+            />
+          </div>
+
+          {/* Input: Contraseña */}
+          <div className={styles.inputGroup}>
+            <label className={styles.fieldLabel}>
+              Contraseña
+            </label>
+            <input 
+              type="password" 
+              placeholder="••••••••••••" 
+              className={styles.textInput}
+              required
+            />
+          </div>
+
+          {/* Botón de Login Sólido */}
+          <button type="submit" className={styles.submitButton}>
+            Iniciar Sesión
+          </button>
+          
+        </form>
+
+        {/* Opción sutil para redirigir al Registro */}
+        <div className={styles.registerRedirect}>
+          ¿No tienes una cuenta? <Link href="/register">Regístrate</Link>
+        </div>
+
       </div>
     </div>
   );
