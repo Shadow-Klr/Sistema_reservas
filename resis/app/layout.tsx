@@ -1,37 +1,21 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
-<<<<<<< HEAD
-import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./components/theme-provider";
-=======
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import { ThemeProvider } from "../components/theme-provider";
->>>>>>> 5640071f68dd67b92992cccc5dc6cb8f43dbb56e
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SyncSpace | Gestión Inteligente",
-  description: "Plataforma de gestión de reservas en tiempo real.",
+  title: "El Ejemplo | Restaurante",
+  description: "Cocina tradicional con toque de vanguardia",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
+    <html lang="es" className="dark">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main>{children}</main>
-        </ThemeProvider>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

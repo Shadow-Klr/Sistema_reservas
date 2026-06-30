@@ -4,64 +4,57 @@
 
 @layer base {
   :root {
-    /* Paleta de Colores: Negro antiguo, Crema dorado, Bronce */
-    --background: 20 10% 3%;     /* Fondo casi negro, muy profundo */
-    --foreground: 40 20% 85%;    /* Texto color crema suave */
+    /* Paleta base oscura profesional */
+    --background: 0 0% 2%;    /* #050505 - Negro profundo */
+    --foreground: 40 10% 90%; /* Crema suave para legibilidad */
     
-    --card: 20 15% 6%;           /* Fondo de tarjetas ligeramente más claro */
-    --card-foreground: 40 20% 85%;
+    /* Variables de shadcn/ui configuradas para modo oscuro */
+    --card: 0 0% 5%;
+    --card-foreground: 40 10% 90%;
     
-    --primary: 35 60% 45%;       /* Bronce/Dorado quemado */
-    --primary-foreground: 40 10% 98%;
+    --primary: 35 70% 50%;    /* Bronce/Ámbar para acentos */
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 20 10% 12%;
-    --secondary-foreground: 40 20% 85%;
-    
-    --muted: 20 10% 12%;
+    --muted: 0 0% 10%;
     --muted-foreground: 40 10% 60%;
     
-    --accent: 35 60% 45%;        /* Color de acento para botones/detalles */
-    --accent-foreground: 40 10% 98%;
-    
-    --border: 35 30% 20%;        /* Bordes estilo bronce envejecido */
-    --input: 20 10% 12%;
-    --ring: 35 60% 45%;
-    
-    --radius: 0px;               /* IMPORTANTE: Estilo clásico sin esquinas redondeadas */
+    --border: 0 0% 15%;       /* Bordes sutiles para separar secciones */
+    --input: 0 0% 15%;
+    --ring: 35 70% 50%;
   }
 
-  /* Reset y tipografía elegante */
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: 'Times New Roman', Times, serif; /* Serifa clásica */
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
   }
 
-  h1, h2, h3, h4 {
-    font-family: serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  /* Mejora de legibilidad para elementos con scroll */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 
-/* Efecto decorativo: línea sutil debajo de títulos */
-.antique-border {
-  border-bottom: 1px solid hsl(var(--primary) / 0.5);
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-/* Scrollbar personalizado acorde a la temática */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-}
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.3);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+@layer utilities {
+  /* Clase de utilidad para imágenes con efecto de profundidad */
+  .dark-overlay {
+    position: relative;
+  }
+  .dark-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
 }
